@@ -748,6 +748,16 @@
     <child link="base_link_gripper"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
   </joint>
+
+  <!-- create a virtual fixed joint for having the point of the picking of the gripper-->
+
+ <link name="picking_point" />
+ <joint name="picking_joint" type="fixed">
+    <parent link="Link6"/>
+    <child link="picking_point"/>
+    <origin xyz="0.0 0.0 0.12" rpy="0 0 0"/>
+  </joint>
+
   
  <xacro:macro name="robot_transmission" params="joint_name">
     <transmission name="${joint_name}_trans">
